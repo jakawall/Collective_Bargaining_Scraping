@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 5px 20px;
+        }
+
+        body {
+            color: #292929;
+            font: 140% Roboto, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        p {
+            padding: 0 10px;
+            line-height: 1.8;
+        }
+
+        ul li {
+            padding-right: 10px;
+            line-height: 1.6;
+        }
+
+        h3 {
+            padding: 5px 20px;
+            margin: 0;
+        }
+
+        div#header {
+            position: relative;
+        }
+
+        div#header h1 {
+            height: 80px;
+            line-height: 80px;
+            margin: 0;
+            padding-left: 10px;
+            background: #e0e0e0;
+            color: #292929;
+        }
+
+        div#header a {
+            position: absolute;
+            right: 0;
+            top: 23px;
+            padding: 10px;
+            color: #006;
+        }
+
+        div#wrapper {
+            float: left;
+            width: 100%;
+        }
+
+        div#content {
+            margin: 0 25%;
+        }
+        
+    </style>
+
+
+    <title>A systematic analysis of collective bargaining agreements in Austria</title>
+  </head>
+  <body>
+    <h1>A systematic analysis of collective bargaining agreements in Austria</h1>
+    
+    <p> 
+        Collective bargaining agreements play a crucial role in shaping the Austrian labor market, serving as key instruments for regulating employment conditions, wages, and labor relations across various sectors. These agreements are negotiated between trade unions, representing the interests of workers, and employers' organizations, aiming to strike a balance between the two sides of the labor market. In Austria, collective bargaining enjoys a high level of institutionalization, with over 95% of workers covered under these agreements. This comprehensive coverage ensures that even those not directly affiliated with unions benefit from the standards set in Collective bargaining agreements. 
+Across all industries, there are more than 800 collective bargaining agreements active in Austria, and this large number as well as the complexity of every single agreements has so far impeded a systematic analysis of their role and development in the economics literature. This project seeks to fill this gap by providing a first tentative and descriptive analysis of collective bargaining agreements in Austria. 
+The data source for the agreements used in this project is the “KVSystem” portal of the Austrian ÖGBVerlag, the publishing house of the main Austrian trade union. Access to this database has kindly been provided by the ÖGBVerlag. The database covers all collective bargaining agreements across sectors in recent decades, which are provided to the user through a search engine. 
+
+    </p>
+    
+    <h3>Scraping the data</h3>
+
+    <p>
+        As a first step to scraping the contracts from the database, we need to create a comprehensive list of all existing collective bargaining agreements that are of interest to us. To this end, we use a dynamic webscraping process, that searches for all agreements negotiated in Austria from 1995 to 2020 using the KVSystem search engine. The search results consist of a long list of links to the main page covering each individual contract. This list is stored in a dataframe and saved as a csv-file using BeautifulSoup. 
+Next, we use the list obtained above to scrape every single contract. Each contract generally consists of a main framework (”Rahmen”), and up to 20 different attachments, appendices, or side contracts. In order to cover all the information, the scraping algorithm first takes a snapshot of the main contract website, and identifies the number of pieces that make up the contract. Afterwards, all individual parts are accessed, the contract saved in a separate file both as text as well as the entire html code. 
+</p>
+
+
+<h3>Analysis</h3>
+
+<p>
+    We are now able to perform some very first descriptive analysis of the data obtained. In total, we have scraped over 16.000 collective bargaining agreements over a span of 25 years, with an average of about 640 contracts per year. The total number of documents scraped however amounts to more than 54.000, owing to the fact that, as outlined above, every agreements consists of multiple documents, with every main agreement on average containing 2.3 additional documents. </p>
+    

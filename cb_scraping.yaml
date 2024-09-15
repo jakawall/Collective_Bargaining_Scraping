@@ -1,0 +1,29 @@
+name: cb_scraping
+
+channels: 
+  - conda-forge
+
+dependencies:
+  - python
+  - pandas
+  - requests
+  - re
+  - time
+  - bs4
+  - os
+  - selenium
+  - time
+  - snakemake
+  - unrar
+  - httpie
+  - ipykernel
+  - chromedriver-autoinstaller
+  - matplotlib
+  - gdal
+  - folium
+  - sys
+  - spacy
+  - plotly
+  - numpy
+  - statsmodels
+  - lxml
