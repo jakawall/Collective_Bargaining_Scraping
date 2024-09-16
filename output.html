@@ -84,5 +84,22 @@ Next, we use the list obtained above to scrape every single contract. Each contr
 <h3>Analysis</h3>
 
 <p>
-    We are now able to perform some very first descriptive analysis of the data obtained. In total, we have scraped over 16.000 collective bargaining agreements over a span of 25 years, with an average of about 640 contracts per year. The total number of documents scraped however amounts to more than 54.000, owing to the fact that, as outlined above, every agreements consists of multiple documents, with every main agreement on average containing 2.3 additional documents. </p>
+    We are now able to perform some very first descriptive analysis of the data obtained. 
+    In total, we have scraped over 16.000 collective bargaining agreements over a span of 25 years, with an average of about 460 contracts per year. The total number of documents scraped however amounts to more than 54.000, owing to the fact that, as outlined above, every agreements consists of multiple documents, with every main agreement on average containing 2.3 additional documents. </p>
     
+    <div style="text-align: center;"></div>
+        <img src="output/contracts_per_year.png" width = "700" >
+     </div>
+
+
+     <h3>Text Analysis</h3>
+     <p>
+        We can also start to perform some rudimentary text analysis. One interesting question to ask ourselves is whether we can find any trends in the relative importance of different topics in the collective bargaining agreements. For this purpose, we lemmatize all words in our contracts using the spacy package and its module “de_core_news_md”. We then count the number of times some interesting words appear in the contracts, and calculate the average number of occurrences per year across all contracts. The results are shown in the figure below.
+                <p>
+                    <div style="text-align: center;"></div>
+                    <img src="output/word_frequencies_year.png" width = "700" >
+                 </div>
+
+    <p>
+        We can see that some topics increase in relative importance over the years analyzed, reflecting their increasing relevance to workers and a change of priorities. For example, we see a rise of frequency of words such as “working time”, “part time”, or “flexible”, which can be interpreted as signs of a rising importance of work-life balance and the regulation thereof. Moreover, words relating to parental leave (such as “parental leave” or “child”) become more frequent as well. The same is true for the word “additional training”, plausibly indicative of the increasing need to continuously update worker’s skillset in the modern labor market. Finally, one line rising strongly is simply “wage”, whose importance for workers and firms alike we refrain from justifying in detail.
+    </p>
